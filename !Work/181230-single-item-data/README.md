@@ -13,4 +13,3 @@
   thumbnail_orig:   http://www.itu.int/dms_pub/itu-d/opb/pref/D-PREF-BB.REG_OUT01-2018-OAS-JPG-E.jpg
   static_path:      http://www.itu.int/dms_pages/itu-d/opb/pref/D-PREF-BB.REG_OUT01-2018.xml
 ```
-
