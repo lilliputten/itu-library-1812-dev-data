@@ -1,0 +1,112 @@
+<md-content flex>
+	<md-card class="search" md-whiteframe="3" id="search">
+		<md-card-header>
+			<!-- <md-card-avatar> 
+					<img src="https://www.itu.int/PublishingImages/masterpage/logos/itu-logo-old.png" />
+				</md-card-avatar> -->
+			<md-card-header-text>
+				<span class="md-title">
+					<i18n word="publications" language="{{dicoLanguage}}"></i18n>
+				</span>
+				<!--<span class="md-subhead"></span>-->
+			</md-card-header-text>
+		</md-card-header>
+		<md-card-content>
+			<div layout="row">
+				<md-input-container class="md-block md-icon-float search-filter" flex="90" flex-offset="5">
+					<label class="md-input-label">
+						<i18n word="search" language="{{dicoLanguage}}"></i18n>
+					</label>
+					<!--<md-icon md-font-set="material-icons" class="md-24 icon-white">search</md-icon>-->
+					<input class="md-title icon-white" ng-model="query.text" disable-enter id="input-search" ng-keydown="searchKeydown($event,query)"
+					/>
+					<!--ng-keydown="searchKeydown($event,query)" -->
+				</md-input-container>
+			</div>
+			<div layout="row">
+				<md-input-container flex="40" flex-offset="5" class="search-filter">
+					<!--<md-icon md-font-set="material-icons" class="md-24 icon-white">date_range</md-icon>-->
+					<label class="md-input-label">
+						<i18n word="year" language="{{dicoLanguage}}"></i18n>
+					</label>
+
+					<md-select ng-model="query.year" multiple aria-label="year">
+						<!-- ng-change="searchByYear(queryYear)"-->
+						<md-option ng-repeat="year in selectYear">{{year}}</md-option>
+						<!-- <md-option>2016</md-option>
+						<md-option>2015</md-option>
+						<md-option>2014</md-option>
+						<md-option>2013</md-option>
+						<md-option>2012</md-option>
+						<md-option>2011</md-option>
+						<md-option>2010</md-option>
+						<md-option>2009</md-option>
+						<md-option>2008</md-option> -->
+					</md-select>
+				</md-input-container>
+				<md-input-container flex="40" flex-offset="10" class="search-filter">
+					<!--<md-icon md-font-set="material-icons" class="md-24 icon-white">monetization_on</md-icon>-->
+					<label class="md-input-label">
+						<i18n word="price" language="{{dicoLanguage}}"></i18n>
+					</label>
+					<md-select ng-model="query.price" aria-label="price">
+						<!--ng-change="searchByPrice(queryPrice)"-->
+						<md-option value="all">
+							<i18n word="all" language="{{dicoLanguage}}"></i18n>
+						</md-option>
+						<md-option value="paying">
+							<i18n word="notfree" language="{{dicoLanguage}}"></i18n>
+						</md-option>
+						<md-option value="free">
+							<i18n word="free" language="{{dicoLanguage}}"></i18n>
+						</md-option>
+					</md-select>
+				</md-input-container>
+			</div>
+		</md-card-content>
+		<md-card-actions layout="row">
+			<!--<p class="result-number" flex>
+				<i18n word="NumberResults" language="{{dicoLanguage}}"></i18n>{{':' + publications.length}}
+			</p>-->
+			<div flex layout="row" layout-align="end center">
+				<md-button class="md-fab" ng-click="resetSearch()" aria-label="reset" value="Reset">
+					<md-icon md-font-set="material-icons">autorenew</md-icon>
+				</md-button>
+				<md-button class="md-fab md-primary" ng-click="search($event,query)" aria-label="search">
+					<!--<i18n word="reset" language="{{dicoLanguage}}"></i18n>-->
+					<md-icon md-font-set="material-icons">search</md-icon>
+				</md-button>
+			</div>
+		</md-card-actions>
+		<md-progress-linear md-mode="indeterminate" ng-disabled="showGrid"></md-progress-linear>
+	</md-card>
+
+	<div ng-repeat="publication in publications" ng-show="showGrid">
+		<div class="date-separate" id="{{publication.year}}" layout="row">
+			<div class="title" flex="70">{{publication.year}}</div>
+			<div class="content" flex="30">
+				<i18n word="NumberResults" language="{{dicoLanguage}}"></i18n> : {{publication.publication.length}}</div>
+		</div>
+		<md-grid-list md-cols="3" md-row-height="1:1" md-gutter="3px" style="margin-bottom:40px" id="grid">
+			<md-grid-tile ng-repeat="p in publication.publication" class="blue" ng-mouseleave="show=false" ng-mouseover="show=true" ng-mouseenter="mouseEnter($index)"
+			 id="tile-{{$index}}" repeat-done>
+
+				<img id="{{$index}}" ng-src="{{p.thumbnail}}" onError="this.src='/en/ITU-D/siteassets/apps/publications/res/img/ic_photo_black_48px.svg'"
+				 class="md-whiteframe-10dp my-image" />
+				<a class="more-information" ng-href="#/publication/{{p._id}}" ng-show="show">
+					<p>{{p.ltitle | limitTo:80}} {{p.ltitle.length >= 80 ? "..." : ""}}</p>
+					<div class="bottom-actions">
+						<h3>{{p.version_date}}</h3>
+						<md-button class="md-primary md-raised" aria-label="more">
+							<i18n word="details" language="{{dicoLanguage}}"></i18n>
+						</md-button>
+					</div>
+				</a>
+			</md-grid-tile>
+		</md-grid-list>
+	</div>
+
+	<md-button class="md-fab md-primary to-top" ng-show="showTopBtn" ng-click="goToTop()" aria-label="arrow_upward">
+		<md-icon md-font-set="material-icons">arrow_upward</md-icon>
+	</md-button>
+</md-content>

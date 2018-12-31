@@ -1,0 +1,55 @@
+_id:              5c11aa894ca0907e3b533ce4
+object_name:      D-PREF-BB.REG_OUT01-2018
+__v:              0
+modifiedOn:       2018-12-29T04:00:28.122Z
+createdAt:        2018-12-30T21:44:29.178Z
+published:        false
+publication_date: 20181218
+items:
+  -
+    _id:          5c26f15c4f5ab8921cf9e3d8
+    file_type:
+    online_price: 79 CHF
+    download_url: http://www.itu.int/dms_pay/itu-d/opb/pref/D-PREF-BB.REG_OUT01-2018-EPB-E.epub
+    language:     E
+    edition:      -
+  -
+    _id:          5c26f15c4f5ab8921cf9e3d7
+    file_type:
+    online_price: 79 CHF
+    download_url: http://www.itu.int/dms_pay/itu-d/opb/pref/D-PREF-BB.REG_OUT01-2018-MBP-E.mobi
+    language:     E
+    edition:      -
+  -
+    _id:          5c26f15c4f5ab8921cf9e3d6
+    file_type:
+    online_price: 132 CHF
+    download_url:
+    language:     E
+    edition:      Paper
+  -
+    _id:          5c26f15c4f5ab8921cf9e3d5
+    file_type:
+    online_price: 79 CHF
+    download_url: http://www.itu.int/dms_pay/itu-d/opb/pref/D-PREF-BB.REG_OUT01-2018-PDF-E.pdf
+    language:     E
+    edition:      PDF
+url:              http://www.itu.int/pub/D-PREF-BB.REG_OUT01-2018
+thumbnail:        https://www.itu.int/itu-d/apis/clients/publications/res/image/D-PREF-BB.REG_OUT01-2018-OAS-JPG-E.jpg
+thumbnail_orig:   http://www.itu.int/dms_pub/itu-d/opb/pref/D-PREF-BB.REG_OUT01-2018-OAS-JPG-E.jpg
+static_path:      http://www.itu.int/dms_pages/itu-d/opb/pref/D-PREF-BB.REG_OUT01-2018.xml
+r_object_id:      0b00004f81234575
+version_date:     2018
+observation:
+  """
+    The Global ICT Regulatory Outlook 2018 is the second edition of a landmark ITU series. The Outlook focuses on policy and regulatory trends in the ICT sector and brings together cutting-edge research on various topics. It also explores for the first time regulatory collaboration across the board. The report provides organic analysis based on home-grown data, expertise and analytics.
+    <p>The Global ICT Regulatory Outlook is targeted at a wide audience of ICT professionals, including ICT regulators and ministries, Chief Regulatory Officers, policy advisers and academia.</p>
+    <p>Access to soft copies have been made available to ITU Members and sector members via their individual TIES access.  For more information, please contact ITU Sales or refer to the Publication Notice.</p>
+  """
+ltitle:           Global ICT Regulatory Outlook
+friendly_name:
+bdt:
+  isBDT:       false
+  observation: null
+  ltitle:      null
+  dps:         null
